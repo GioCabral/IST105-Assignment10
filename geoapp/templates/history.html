@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History - Geo Weather Adventure</title>
+</head>
+<body>
+    <h1>Search History</h1>
+
+    {% if searches %}
+        <ul>
+            {% for s in searches %}
+                <li>
+                    {{ s.created_at }} - {{ s.continent }}
+                    <ul>
+                        {% for r in s.results %}
+                            <li>
+                                {{ r.country }} - {{ r.capital }}:
+                                {{ r.temperature }}°C, {{ r.description }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No history yet or Mongo not configured.</p>
+    {% endif %}
+
+    <p><a href="{% url 'continent_form' %}">Back to search</a></p>
+</body>
+</html>

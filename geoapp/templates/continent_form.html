@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geo Weather Adventure</title>
+</head>
+<body>
+    <h1>Geo Weather Adventure</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search Weather</button>
+    </form>
+
+    <p><a href="{% url 'history' %}">View history</a></p>
+</body>
+</html>
