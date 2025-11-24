@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results - Geo Weather Adventure</title>
+</head>
+<body>
+    <h1>Weather in random countries from {{ continent }}</h1>
+
+    {% if results %}
+        <ul>
+            {% for r in results %}
+                <li>
+                    <strong>{{ r.country }}</strong> - {{ r.capital }}:
+                    {{ r.temperature }}°C, {{ r.description }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results available.</p>
+    {% endif %}
+
+    <p><a href="{% url 'continent_form' %}">New search</a></p>
+    <p><a href="{% url 'history' %}">View history</a></p>
+</body>
+</html>
