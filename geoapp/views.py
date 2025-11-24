@@ -9,7 +9,7 @@ from .forms import ContinentForm
 
 OPENWEATHER_API_KEY = "0b86c9fe4070a7e83b1baa5679561997"
 
-MONGO_URI = "mongodb://localhost:27017"
+MONGO_URI = "mongodb://172.31.73.12:27017"
 MONGO_DB_NAME = "geo_weather"
 MONGO_COLLECTION_NAME = "searches"
 
